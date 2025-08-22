@@ -416,7 +416,7 @@ sinfl_decompress(unsigned char *out, int cap, const unsigned char *in, int size)
 
       if ((unsigned short)len != (unsigned short)~nlen)
         return (int)(out-o);
-      if (len > (e - s.bitptr))
+      if (len > (unsigned int)(e - s.bitptr))
         return (int)(out-o);
 
       if (sinfl_unlikely(out + len > oe)) return -2;
